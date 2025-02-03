@@ -41,6 +41,23 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        		<dependency>
+        			<groupId>org.mapstruct</groupId>
+        			<artifactId>mapstruct</artifactId>
+        			<version>1.6.0.Beta2</version>
+        		</dependency>
+        		<dependency>
+        			<groupId>org.projectlombok</groupId>
+        			<artifactId>lombok</artifactId>
+        			<version>1.18.32</version>
+        		</dependency>
+        		<!--		to remove conflict bet lombok and mapstruct-->
+        		<dependency>
+        			<groupId>org.projectlombok</groupId>
+        			<artifactId>lombok-mapstruct-binding</artifactId>
+        			<version>0.2.0</version>
+        		</dependency>
     </dependencies>
 
     <build>
@@ -48,15 +65,35 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
             </plugin>
+
+<!--            plugin to appear impl of mapstruct-->
+            			<plugin>
+            				<groupId>org.apache.maven.plugins</groupId>
+            				<artifactId>maven-compiler-plugin</artifactId>
+            				<configuration>
+            					<annotationProcessorPaths>
+            						<path>
+            							<groupId>org.mapstruct</groupId>
+            							<artifactId>mapstruct-processor</artifactId>
+            							<version>1.6.0.Beta2</version>
+            						</path>
+            						<path>
+            							<groupId>org.projectlombok</groupId>
+            							<artifactId>lombok</artifactId>
+            							<version>1.18.32</version>
+            						</path>
+            						<path>
+            							<groupId>org.projectlombok</groupId>
+            							<artifactId>lombok-mapstruct-binding</artifactId>
+            							<version>0.2.0</version>
+            						</path>
+            					</annotationProcessorPaths>
+<!--                                <compilerArgs>-->
+<!--                                    <arg>-Amapstruct.defaultComponentModel=spring</arg>-->
+<!--                                </compilerArgs>-->
+            				</configuration>
+            			</plugin>
         </plugins>
     </build>
 
