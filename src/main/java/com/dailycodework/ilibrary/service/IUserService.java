@@ -1,14 +1,14 @@
 package com.dailycodework.ilibrary.service;
 
 import com.dailycodework.ilibrary.Entity.User;
-import com.dailycodework.ilibrary.UserRecord;
+import com.dailycodework.ilibrary.dto.UserDto;
 
 import java.util.List;
 
 public interface IUserService {
-    User add(User user);
-    List<UserRecord> getAllUsers();
+    UserDto add(User user);
+    List<UserDto> getAllUsers();
     void delete(String email);
-   User getUser(String email);
-    User update(User user);
+   UserDto getUser(String email);
+    UserDto update(User user);
 }

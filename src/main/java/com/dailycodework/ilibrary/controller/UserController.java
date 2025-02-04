@@ -1,7 +1,7 @@
 package com.dailycodework.ilibrary.controller;
 
 import com.dailycodework.ilibrary.Entity.User;
-import com.dailycodework.ilibrary.UserRecord;
+import com.dailycodework.ilibrary.dto.UserDto;
 import com.dailycodework.ilibrary.service.imp.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,16 +17,16 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<UserRecord>> getAllUsers(){
+    public ResponseEntity<List<UserDto>> getAllUsers(){
         return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.FOUND);
     }
     @PostMapping("/add")
-    public ResponseEntity<User> add(@RequestBody User user){
+    public ResponseEntity<UserDto> add(@RequestBody User user){
         return ResponseEntity.ok(userService.add(user));
     }
 
     @GetMapping("/{email}")
-    public User getByEmail(@PathVariable("email") String email){
+    public UserDto getByEmail(@PathVariable("email") String email){
         return  userService.getUser(email);
     }
 
@@ -35,8 +35,8 @@ public class UserController {
         userService.delete(email);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<User> update(@RequestBody User user){
+    @PatchMapping("/update")
+    public ResponseEntity<UserDto> update(@RequestBody User user){
         return ResponseEntity.ok(userService.update(user));
     }
 

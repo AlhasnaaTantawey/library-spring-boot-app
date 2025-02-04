@@ -1,5 +1,6 @@
 package com.dailycodework.ilibrary.Entity;
 
+import com.dailycodework.ilibrary.base.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,11 +14,8 @@ import org.hibernate.annotations.NaturalId;
 @Getter
 @Setter
 @NoArgsConstructor
-public class User {
+public class User extends BaseEntity<Long> {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String firstName;
     private String lastName;
     @NaturalId(mutable = true)
