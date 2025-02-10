@@ -1,6 +1,7 @@
 com\dailycodework\ilibrary\ILibraryApplication.class
 com\dailycodework\ilibrary\repository\BookRepository.class
 com\dailycodework\ilibrary\repository\UserRepository.class
+com\dailycodework\ilibrary\security\jwt\JWTService.class
 com\dailycodework\ilibrary\security\LibrarySecurityConfig.class
 com\dailycodework\ilibrary\security\LibraryUserDeatils.class
 com\dailycodework\ilibrary\UserRecord.class
@@ -10,6 +11,7 @@ com\dailycodework\ilibrary\mapper\BookMapperImpl.class
 com\dailycodework\ilibrary\security\LibraryUserDetailsService.class
 com\dailycodework\ilibrary\mapper\UserMapperImpl.class
 com\dailycodework\ilibrary\exception\ExceptionHandlerDemo.class
+com\dailycodework\ilibrary\security\jwt\JWTController.class
 com\dailycodework\ilibrary\exception\BookNotFoundException.class
 com\dailycodework\ilibrary\controller\UserController.class
 com\dailycodework\ilibrary\controller\BookController.class
@@ -18,8 +20,10 @@ com\dailycodework\ilibrary\exception\UserAlreadyExistsException.class
 com\dailycodework\ilibrary\service\imp\BookService.class
 com\dailycodework\ilibrary\service\imp\UserService.class
 com\dailycodework\ilibrary\dto\BookDto.class
+com\dailycodework\ilibrary\security\jwt\JWTAuthenticationFilter.class
 com\dailycodework\ilibrary\mapper\BookMapper.class
 com\dailycodework\ilibrary\dto\UserDto.class
+com\dailycodework\ilibrary\security\jwt\JWTAuthenticationRequest.class
 com\dailycodework\ilibrary\service\IBookService.class
 com\dailycodework\ilibrary\Entity\User.class
 com\dailycodework\ilibrary\service\IUserService.class
